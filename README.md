@@ -14,34 +14,25 @@
 
 ---
 
-## 运行环境
+## 快速开始
+
+### 环境要求
 
 - Python 3.6+
 - requests 库
 
----
-
-## 安装
-
-1. 克隆仓库：
+### 安装与运行
 
 ```bash
+# 克隆仓库
 git clone https://github.com/landeshuodmm/weather-tool.git
 cd weather-tool
-```
 
-2. 安装依赖：
-
-```bash
+# 安装依赖
 pip install requests
-```
 
----
-
-## 使用
-
-```bash
-python ai代码练习/day5.py
+# 运行
+python weather.py
 ```
 
 ### 示例会话
@@ -84,16 +75,14 @@ wttr.in 支持全球绝大多数城市，输入城市英文名即可查询，例
 
 | 文件 | 说明 |
 |------|------|
-| ai代码练习/day3.py | Day 3 练习：文件读写与单词统计 |
-| ai代码练习/day4.py | Day 4 练习：第一个 API 调用（写死城市） |
-| ai代码练习/day5.py | 主要程序：可循环查询 + 历史记录的天气工具 |
+| weather.py | 主程序：查询天气并保存历史记录 |
 | weather_history.txt | 查询历史记录（自动生成） |
 
 ---
 
 ## 数据来源
 
-本工具使用 wttr.in 提供的免费天气 API，无需注册，无需 API Key。
+本工具使用 [wttr.in](https://github.com/chubin/wttr.in) 提供的免费天气 API，无需注册，无需 API Key。
 
 ---
 
