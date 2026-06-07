@@ -1,0 +1,35 @@
+<html><head><meta charset="utf-8"><title>AI对话演示</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1a1a2e;font-family:sans-serif;padding:20px;color:#fff}
+.container{max-width:780px;margin:0 auto}
+h1{text-align:center;color:#e94560;margin:10px 0}
+.msg{background:#16213e;border-radius:10px;padding:15px;margin:10px 0;border:1px solid #0f3460}
+.q{color:#e94560;font-weight:bold;margin-bottom:5px}
+.a{color:#7ec8e3;line-height:1.6}
+.code{background:#0f3460;border-radius:8px;padding:15px;margin:15px 0;font-size:13px;color:#7ec8e3;line-height:1.5}
+.tag{display:inline-block;background:#e94560;padding:2px 8px;border-radius:4px;font-size:11px;margin-left:5px;color:#fff}
+.footer{text-align:center;color:#555;font-size:12px;margin-top:30px}
+</style></head><body>
+<div class="container">
+<h1>AI 对话演示（带上下文记忆）</h1>
+
+<div class="msg"><div class="q">你</div><div class="a">你好，我叫小明</div></div>
+<div class="msg"><div class="q">AI</div><div class="a">你好，小明！很高兴认识你！😊 有什么我可以帮你的吗？无论是聊天、学习、解决问题，还是分享趣事，我都在这儿等着你～</div></div>
+<div class="msg"><div class="q">你 <span class="tag">有记忆</span></div><div class="a">我叫什么名字？</div></div>
+<div class="msg"><div class="q">AI</div><div class="a">你刚刚告诉我啦——你叫**小明**！😊 如果你还有其他名字或者想换个称呼，随时告诉我哦～</div></div>
+
+<div class="code"><b>chat.py 核心原理：</b><br><br>
+messages = []<br>
+messages.append({'role': 'user', 'content': '你好，我叫小明'})<br>
+data = {'model': 'deepseek-chat', 'messages': messages}<br>
+# ... 拿到回复后 ...<br>
+messages.append({'role': 'assistant', 'content': reply})<br><br>
+# 下一轮带上历史<br>
+messages.append({'role': 'user', 'content': '我叫什么名字？'})<br>
+data = {'model': 'deepseek-chat', 'messages': messages}<br>
+# AI 就能看到前面的对话了</div>
+
+<p style="text-align:center;color:#aaa">在终端运行 python chat.py 亲自体验</p>
+<div class="footer">Codex + DeepSeek</div>
+</div></body></html>
